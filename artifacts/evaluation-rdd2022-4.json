@@ -1,0 +1,204 @@
+{
+  "images": 4,
+  "iou_threshold": 0.5,
+  "true_positive": 4,
+  "false_positive": 3,
+  "false_negative": 2,
+  "precision": 0.5714285714285714,
+  "recall": 0.6666666666666666,
+  "f1": 0.6153846153846154,
+  "per_class": {
+    "longitudinal_crack": {
+      "true_positive": 1,
+      "false_positive": 2,
+      "false_negative": 0,
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1": 0.5
+    },
+    "transverse_crack": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "alligator_crack": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "pothole": {
+      "true_positive": 2,
+      "false_positive": 1,
+      "false_negative": 1,
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1": 0.6666666666666666
+    }
+  },
+  "confidence_threshold": 0.3,
+  "model": "dronefreak/rdd2022-yolov8n",
+  "revision": "acf216a43d796f7910fc854f662c1e9cfa03fc01",
+  "provenance": "RDD2022 авторлық test үлгілері; Arya et al.; CC BY-SA 4.0; төрт сурет; Қазақстаннан емес; тәуелсіз жергілікті валидация емес",
+  "skipped_unlabeled": [],
+  "records": [
+    {
+      "image": "China_Drone_000008.jpg",
+      "truth": [
+        {
+          "category": "transverse_crack",
+          "bbox": [
+            55.99974399999999,
+            351.000064,
+            358.99980800000003,
+            450.999808
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "category": "transverse_crack",
+          "confidence": 0.5361812710762024,
+          "bbox": [
+            42.47,
+            342.48,
+            381.22,
+            457.14
+          ]
+        },
+        {
+          "category": "longitudinal_crack",
+          "confidence": 0.40451639890670776,
+          "bbox": [
+            61.93,
+            341.73,
+            372.24,
+            456.61
+          ]
+        }
+      ]
+    },
+    {
+      "image": "China_Drone_000099.jpg",
+      "truth": [
+        {
+          "category": "longitudinal_crack",
+          "bbox": [
+            83.00006400000001,
+            161.99987199999998,
+            274.000128,
+            416.0
+          ]
+        },
+        {
+          "category": "pothole",
+          "bbox": [
+            138.00012800000002,
+            446.000128,
+            279.00032,
+            512.0
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "category": "longitudinal_crack",
+          "confidence": 0.5066604018211365,
+          "bbox": [
+            86.09,
+            165.99,
+            262.03,
+            408.86
+          ]
+        },
+        {
+          "category": "longitudinal_crack",
+          "confidence": 0.34010109305381775,
+          "bbox": [
+            85.02,
+            315.9,
+            165.22,
+            411.92
+          ]
+        }
+      ]
+    },
+    {
+      "image": "China_Drone_000101.jpg",
+      "truth": [
+        {
+          "category": "pothole",
+          "bbox": [
+            221.99987199999998,
+            239.99974400000002,
+            420.0,
+            316.999936
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "category": "pothole",
+          "confidence": 0.5420909523963928,
+          "bbox": [
+            215.24,
+            244.02,
+            422.75,
+            318.6
+          ]
+        }
+      ]
+    },
+    {
+      "image": "China_Drone_000116.jpg",
+      "truth": [
+        {
+          "category": "pothole",
+          "bbox": [
+            23.00006400000001,
+            1.0001919999999984,
+            202.999808,
+            169.000192
+          ]
+        },
+        {
+          "category": "alligator_crack",
+          "bbox": [
+            71.000064,
+            381.999616,
+            167.000064,
+            457.99987200000004
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "category": "pothole",
+          "confidence": 0.6442174315452576,
+          "bbox": [
+            28.08,
+            0.0,
+            203.35,
+            128.23
+          ]
+        },
+        {
+          "category": "pothole",
+          "confidence": 0.520138680934906,
+          "bbox": [
+            14.85,
+            49.91,
+            203.85,
+            159.38
+          ]
+        }
+      ]
+    }
+  ],
+  "limitation": "Шағын жиынтық Қазақстандағы сапаны растауға жеткіліксіз. Бұл mAP немесе жіктеу accuracy көрсеткіші емес."
+}

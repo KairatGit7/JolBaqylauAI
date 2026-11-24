@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% from 'ui.html' import icon %}
+{% block title %}Шарт сақталмады · ЖолБақылау AI{% endblock %}
+{% block content %}<section class="card empty"><span class="empty-icon">{{ icon('info') }}</span><h1>Шарт сақталмады</h1><p>Жоғарыдағы қатені түзетіңіз. Енгізілген мәліметтерге оралу үшін браузердің артқа батырмасын қолданыңыз.</p><a class="button secondary" href="/transparency#new-contract">Ашықтық мониторингіне оралу {{ icon('arrow') }}</a></section>{% endblock %}

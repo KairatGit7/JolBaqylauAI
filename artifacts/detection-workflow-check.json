@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "original_video": "94edc0965eca46339833e65edbe1333d",
+  "new_video": "b693f28fc27a4391b1bd34ca34ca6518",
+  "frames_analyzed": 170,
+  "job_status": "completed",
+  "candidate_counts": [
+    [
+      "suppressed",
+      "predicted",
+      2
+    ]
+  ],
+  "original_events_preserved": 3,
+  "production_reviews_written": 0,
+  "live_result_url": "http://127.0.0.1:5000/videos/b693f28fc27a4391b1bd34ca34ca6518",
+  "note": "Actual fresh inference at 0.60; two unstable candidates retained privately for review, excluded from current map/report. No automated human confirmation or rejection."
+}

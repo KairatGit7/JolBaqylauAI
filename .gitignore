@@ -1,0 +1,16 @@
+.venv/
+.bootstrap/
+.python/
+.env
+instance/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+*.log
+*.db
+*.sqlite3
+artifacts/private/
+.DS_Store
+.idea/
+.vscode/

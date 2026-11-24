@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% from 'ui.html' import icon, number %}
+{% from 'preset_selector.html' import preset_selector with context %}
+{% block title %}Суретті талдау · ЖолБақылау AI{% endblock %}
+{% block content %}
+<div class="page-heading"><div><div class="eyebrow">ЖОЛ ФОТОСУРЕТІ · НАҚТЫ AI</div><h1>Суретті талдау</h1><p>Жол фотосуретін жүктеп, ақау болжамдарын қараңыз. Құпиясөз қажет емес.</p></div><a class="button secondary" href="/analysis">{{ icon('video') }} Бейнені талдау</a></div>
+<div class="upload-layout"><section class="card"><h2>Жол фотосуретін жүктеу</h2><form method="post" enctype="multipart/form-data" autocomplete="off" data-dirty-warning><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label for="road-image">Сурет файлы<input id="road-image" name="image" type="file" accept=".jpg,.jpeg,.png,.webp" required aria-describedby="image-help"></label><p class="help" id="image-help">JPG, JPEG, PNG, WEBP · 10&nbsp;МБ дейін · 16 мегапиксельге дейін. Анимация қабылданбайды.</p>{{ preset_selector() }}<button class="button primary" type="submit">{{ icon('scan') }} Суретті талдау</button></form></section><aside class="card"><h2>Болжамды дұрыс түсініңіз</h2><p>Санаттар мен модель ұпайлары қазақша белгіленеді. Уақыт сүзгісі жеке суретке қолданылмайды.</p><p class="help">Әдепкі шек: {{ number(config.MODEL_CONFIDENCE, 2) }}. Сенімділік ұпайы — дұрыс анықтаудың калибрленген ықтималдығы емес. Шектен төмен ақаулар көрінбеуі мүмкін.</p><div class="card-footnote">{{ icon('lock') }}Нәтиже осы браузер сессиясына ғана қолжетімді. Бастапқы көрініс метадеректерсіз PNG ретінде сақталады.</div></aside></div>
+{% endblock %}

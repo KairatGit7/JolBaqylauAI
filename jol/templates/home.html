@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% from 'ui.html' import icon, badge, number, date %}
+{% block head %}<link rel="stylesheet" href="/static/vendor/leaflet/leaflet.css"><link rel="preconnect" href="https://a.tile.openstreetmap.org">{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <div><div class="eyebrow">ЖОЛ САПАСЫ. АШЫҚ ДЕРЕК. ҚОҒАМДЫҚ СЕНІМ.</div><h1>Бақылау орталығы</h1><p>Жолдағы жағдайды бақылаңыз. Дәлелге сүйенген шешім қабылдаңыз.</p></div>
+  <a class="button primary" href="/analysis">{{ icon('plus') }} Бейне жүктеу</a>
+</div>
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy"><span class="hero-tag"><span class="status-dot" aria-hidden="true"></span> ЖАСАНДЫ ИНТЕЛЛЕКТ ҚОҒАМ ИГІЛІГІНЕ</span><h2 id="hero-title">Сапалы жол.<br><span>Ашық болашақ.</span></h2><p>Бір бейнеден — тексерілетін дәлелге.<br>Жол ақауларын анықтап, жөндеу деректерімен салыстырыңыз.</p><div class="hero-actions"><a href="/analysis" class="button light">Талдауды бастау {{ icon('arrow') }}</a><a href="/about" class="hero-link">Жүйе қалай жұмыс істейді? {{ icon('external') }}</a></div><div class="hero-bottom"><span>{{ icon('scan') }} Нақты AI моделі</span><span>{{ icon('lock') }} Деректер жеке сақталады</span></div></div>
+  <div class="hero-diagram" aria-label="Бейне, AI талдау және адам тексеруінен тұратын жұмыс үдерісінің сызбасы">
+    <div class="diagram-grid" aria-hidden="true"></div><span class="diagram-caption">ДӘЛЕЛДІҢ ЦИФРЛЫҚ ЖОЛЫ</span>
+    <div class="diagram-node node-video">{{ icon('video') }}<span>Жол бейнесі<small>Көлік камерасынан</small></span><span class="node-status" aria-hidden="true"></span></div>
+    <div class="diagram-connector" aria-hidden="true"></div>
+    <div class="diagram-node node-ai"><span class="ai-symbol">{{ icon('scan') }}</span><span>ЖолБақылау <b translate="no">AI</b><small>Ақауды анықтау · кадрды біріктіру</small></span></div>
+    <div class="diagram-connector" aria-hidden="true"></div>
+    <div class="diagram-node node-review">{{ icon('shield') }}<span>Адамның тексеруі<small>Дәлел → ұсыным → есеп</small></span>{{ icon('check-circle') }}</div>
+    <span class="diagram-footnote">ЖҮЙЕНІҢ СЫЗБАСЫ · ТАЛДАУ НӘТИЖЕСІ ЕМЕС</span>
+  </div>
+</section>
+
+<section class="stats" aria-label="Мониторинг көрсеткіштері">
+  {% for label, value, hint, glyph, tone in [('Тіркелген оқиғалар',total,'Кадрлардан біріктірілген болжамдар','scan','blue'),('Расталған бақылаулар',confirmed,'Адам тексерген жазбалар','check-circle','teal'),('Бақыланған учаскелер',segment_count,'Бақылау жазбасы бар учаскелер','map','violet'),('Белсенді талдау',active,'Кезекте немесе өңделуде','activity','amber')] %}
+  <article class="stat"><div class="stat-top"><span>{{ label }}</span><span class="stat-icon {{ tone }}">{{ icon(glyph) }}</span></div><strong>{{ number(value) }}</strong><small>{{ hint }}</small></article>
+  {% endfor %}
+</section>
+{% if demo_events %}<div class="demo-banner">{{ icon('info') }}<p><strong>Демонстрациялық орта</strong> · Жалпы есептегі {{ number(demo_events) }} болжам демо бейнеден алынған. Бұл нақты қала мониторингі емес.</p><a href="/about">Толығырақ {{ icon('arrow') }}</a></div>{% endif %}
+
+{% if session.get('admin') %}<div class="dashboard-grid">
+  <section class="card overview-map-card">
+    <div class="section-heading"><div><span class="eyebrow">ГЕОГРАФИЯЛЫҚ ШОЛУ</span><h2>Жол жағдайы картада</h2></div><a class="text-link" href="/map">Картаны ашу {{ icon('external') }}</a></div>
+    <div class="overview-map-wrap"><div id="overview-map" role="region" aria-label="Талдықорған картасының шолуы"></div><div class="map-city-label">{{ icon('pin') }}<span><strong>Талдықорған</strong><small>Қазақстан · бастапқы көрініс</small></span></div><a href="/map" class="map-open-link">Толық карта {{ icon('arrow') }}</a></div>
+    <div class="map-summary"><span><span class="legend-dot teal" aria-hidden="true"></span>Координатпен: <strong>{{ number(located) }}</strong></span><span><span class="legend-dot amber" aria-hidden="true"></span>Координатсыз: <strong>{{ number(total - located) }}</strong></span><span class="map-caveat">Қала толық зерттелген жоқ</span></div>
+    <p id="overview-map-status" class="sr-only" role="status">Карта жүктелуде…</p>
+  </section>
+  <section class="card category-card">
+    <div class="section-heading"><div><span class="eyebrow">ЖИНАЛҒАН БАҚЫЛАУЛАР</span><h2>Ақау санаттары</h2></div>{{ icon('scan') }}</div>
+    <p class="card-description">Барлық тіркелген болжам оқиғалары</p>
+    <div class="category-breakdown">{% for key,label in labels.items() %}<a class="category-row" href="/map?category={{ key }}"><span class="category-row-heading"><span><span class="legend-dot category-{{ loop.index }}" aria-hidden="true"></span>{{ label }}</span><strong>{{ number(category_counts.get(key, 0)) }}</strong></span><span class="category-track" aria-hidden="true"><span class="category-{{ loop.index }}" style="width: {{ category_counts.get(key, 0) / total * 100 if total else 0 }}%"></span></span></a>{% endfor %}</div>
+    <div class="card-footnote">{{ icon('info') }}Болжам — расталған факт емес.</div>
+  </section>
+</div>
+{% else %}<section class="card"><h2>Фотосуреттен де бастаңыз</h2><p>Бейне немесе жеке фотосуретті құпиясөзсіз талдай аласыз. Бұл бетте тек осы браузерде жүктелген бейнелер көрсетіледі. Бұрынғы жеке материалдар әкімшілік бөлімде қорғалған.</p><a class="button secondary" href="/images">{{ icon('scan') }} Суретті талдау</a></section>{% endif %}
+
+<section class="card recent-card section-gap">
+  <div class="section-heading"><div><span class="eyebrow">БЕЙНЕ ЖУРНАЛЫ</span><h2>Соңғы талдаулар <span class="count">{{ number(videos|length) }}</span></h2></div><a class="text-link" href="/analysis">Барлық талдау {{ icon('arrow') }}</a></div>
+  {% if videos %}<div class="table-wrap"><table><caption class="sr-only">Соңғы жүктелген бейнелер және талдау күйлері</caption><thead><tr><th scope="col">Бейне</th><th scope="col">Жүктелген уақыт</th><th scope="col">Ұзақтығы</th><th scope="col">Оқиғалар</th><th scope="col">Күйі</th><th scope="col"><span class="sr-only">Жазбаны ашу</span></th></tr></thead><tbody>{% for video in videos %}<tr><td><div class="file-cell"><span class="file-icon">{{ icon('video') }}</span><span><a class="file-name" href="/videos/{{ video.id }}">{{ video.name }}</a><small>{% if video.is_demo %}<span class="mini-label">ДЕМО</span>{% endif %} {{ video.width }} × {{ video.height }} · <span translate="no">{{ video.id[:8] }}</span></small></span></div></td><td>{{ date(video.created_at) }}</td><td>{{ number(video.duration, 1, ' с') }}</td><td>{{ number(video.events|length) }}</td><td>{{ badge(video.job.status, statuses[video.job.status]) }}</td><td><a class="icon-button" href="/videos/{{ video.id }}" aria-label="{{ video.name }} бейнесін ашу">{{ icon('arrow') }}</a></td></tr>{% endfor %}</tbody></table></div>
+  {% else %}<div class="empty"><span class="empty-icon">{{ icon('video') }}</span><h3>Алғашқы сапардан бастаңыз</h3><p>Жол бейнесін жүктеңіз. Талдаулар осы жерде пайда болады.</p><a class="button secondary" href="/analysis">{{ icon('plus') }} Бейне жүктеу</a></div>{% endif %}
+</section>
+{% if session.get('admin') %}<a class="transparency-banner" href="/transparency"><span class="transparency-banner-icon">{{ icon('shield') }}</span><span><strong>Бақылаудан — ашықтыққа</strong><small>Жолдағы дәлелді ресми жөндеу міндеттемесімен байланыстырыңыз.</small></span><span class="transparency-banner-action">Ашықтық мониторингі {{ icon('arrow') }}</span></a>{% endif %}
+{% endblock %}
+{% block scripts %}{% if session.get('admin') %}<script src="/static/vendor/leaflet/leaflet.js" defer></script><script src="/static/overview.js" defer></script>{% endif %}{% endblock %}

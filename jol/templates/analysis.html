@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% from 'ui.html' import icon, badge, number, date %}
+{% from 'preset_selector.html' import preset_selector with context %}
+{% block title %}AI талдау · ЖолБақылау AI{% endblock %}
+{% block content %}
+<div class="page-heading"><div><div class="eyebrow">КОМПЬЮТЕРЛІК КӨРУ</div><h1>Бір сапар. Көптеген бақылау.</h1><p>Жол бейнесін жүктеңіз. AI ақау болжамдары мен дәлел кадрларын дайындайды.</p></div><span class="chip">{{ icon('scan') }} <span translate="no">YOLOv8n · {{ config.MODEL_DEVICE }}</span></span></div>
+<div class="upload-layout">
+  <section class="card">
+    <h2 class="form-section-title"><span class="step-index" aria-hidden="true">01</span> Жол бейнесін жүктеу</h2>
+    <form method="post" enctype="multipart/form-data" id="upload-form" autocomplete="off" data-dirty-warning>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <label class="upload-zone" id="upload-zone" for="video-file"><span class="upload-symbol">{{ icon('upload') }}</span><strong>Бейнені осында сүйреп әкеліңіз</strong><span>немесе файлды таңдау үшін басыңыз</span><small>MP4, MOV, AVI · {{ number(config.MAX_VIDEO_SECONDS, 0) }}&nbsp;с дейін · {{ number(config.MAX_CONTENT_LENGTH / 1048576, 0) }}&nbsp;МБ</small><input type="file" name="video" accept=".mp4,.mov,.avi" required id="video-file" aria-describedby="file-info" data-max-bytes="{{ config.MAX_CONTENT_LENGTH }}"></label>
+      <p id="file-info" class="help" role="status">Бейне құрылғыңыздан жүктеліп, жеке ортада сақталады.</p>
+      <h2 class="form-section-title section-gap"><span class="step-index" aria-hidden="true">02</span> Түсірілім деректері</h2>
+      {{ preset_selector() }}
+      <label for="confidence">Сенімділік шегі<input id="confidence" name="confidence" type="number" min="0.01" max="0.99" step="0.01" value="{{ request.form.get('confidence', config.MODEL_CONFIDENCE) }}" required aria-describedby="confidence-help"></label>
+      <p class="help" id="confidence-help">Әдепкі режимнің шегі — бастапқы мән, расталған оңтайлы шек емес. Шекті көтеру нақты ақауларды да өткізіп жіберуі мүмкін. Әдепкі режимде кемінде {{ config.TEMPORAL_MIN_HITS }} қатар іріктелген кадр, IoU ≥ {{ number(config.TEMPORAL_IOU, 2) }}. Пресет таңдалса, оның бекітілген шегі қолданылады.</p>
+      <label for="observed-at">Бейне түсірілген күн мен уақыт<input type="datetime-local" name="observed_at" id="observed-at" value="{{ request.form.get('observed_at', '') }}" required aria-describedby="observed-help"></label>
+      <p class="help" id="observed-help">Қазақстан уақыты, UTC+5. Шартпен дұрыс салыстыру үшін жүктеу уақытын емес, нақты түсірілім уақытын көрсетіңіз.</p>
+      <label><input type="checkbox" name="is_demo" value="yes" {{ 'checked' if request.form.get('is_demo') == 'yes' }}> Демонстрациялық материал — күні шартты, шарттармен салыстырылмайды</label>
+      <div class="upload-submit"><button class="button primary" type="submit" id="upload-button">{{ icon('scan') }} Талдауды бастау</button><p class="help">Талдау фондық кезекте орындалады.<br>Жүктегеннен кейін басқа бетке өте аласыз.</p></div>
+      <p id="upload-status" role="status" class="help"></p>
+    </form>
+  </section>
+  <aside>
+    <section class="card"><div class="model-card-header"><span>{{ icon('scan') }}</span><div><h2>Жолға үйретілген AI</h2><p translate="no">RDD2022 · YOLOv8n</p></div></div><dl class="details"><dt>Кадр аралығы</dt><dd>{{ number(config.SAMPLE_SECONDS, 1, ' с') }}</dd><dt>Сенімділік шегі</dt><dd>{{ number(config.MODEL_CONFIDENCE * 100, 0, '%') }}</dd><dt>Есептеу құрылғысы</dt><dd translate="no">{{ config.MODEL_DEVICE }}</dd><dt>Орналасу</dt><dd>GPS бар кезде ғана</dd></dl><div class="category-grid">{% for key,label in labels.items() %}<span><span class="legend-dot category-{{ loop.index }}" aria-hidden="true"></span>{{ label }}</span>{% endfor %}</div><div class="card-footnote">{{ icon('info') }}Сенімділік ұпайы ақиқатқа кепіл емес.</div></section>
+    <section class="card section-gap"><h2>Нәтижені қалай қолданасыз?</h2><ol class="steps"><li><b aria-hidden="true">01</b><div><h3>Дәлелді қараңыз</h3><p>Қораптар мен уақыт белгілерін бейнемен салыстырыңыз.</p></div></li><li><b aria-hidden="true">02</b><div><h3>Болжамды тексеріңіз</h3><p>Растау немесе қабылдамау негізін жазыңыз.</p></div></li><li><b aria-hidden="true">03</b><div><h3>Бақылауды байланыстырыңыз</h3><p>GPS, учаске және ресми шарт дерегін қосыңыз.</p></div></li></ol><a class="text-link" href="/about">Модель шектеулерін қарау {{ icon('arrow') }}</a></section>
+    {% if session.get('admin') %}<a class="text-link section-gap" href="/reviews">{{ icon('check-circle') }} Тексерілген үлгілер жинағы {{ icon('arrow') }}</a><br>{% endif %}
+    <a class="text-link section-gap" href="/vibration">{{ icon('activity') }} Қосымша: діріл деректерін талдау {{ icon('arrow') }}</a>
+  </aside>
+</div>
+<section class="card section-gap"><div class="section-heading"><h2>Талдау журналы <span class="count">{{ number(videos|length) }}</span></h2><span class="help">Бейнелер жеке сақталады</span></div>
+  {% if videos %}<div class="table-wrap"><table><caption class="sr-only">Жүктелген бейнелер</caption><thead><tr><th scope="col">Бейне</th><th scope="col">Жүктелген күн</th><th scope="col">Ұзақтығы</th><th scope="col">Күйі</th><th scope="col">Оқиғалар</th><th scope="col"><span class="sr-only">Жазбаны ашу</span></th></tr></thead><tbody>{% for video in videos %}<tr><td><div class="file-cell"><span class="file-icon">{{ icon('video') }}</span><span><a class="file-name" href="/videos/{{ video.id }}">{{ video.name }}</a><small>{% if video.is_demo %}<span class="mini-label">ДЕМО</span>{% endif %}{{ video.width }} × {{ video.height }}</small></span></div></td><td>{{ date(video.created_at) }}</td><td>{{ number(video.duration, 1, ' с') }}</td><td>{{ badge(video.job.status, statuses[video.job.status]) }}</td><td>{{ number(video.events|length) }}</td><td><a class="icon-button" href="/videos/{{ video.id }}" aria-label="{{ video.name }} бейнесінің нәтижесін ашу">{{ icon('arrow') }}</a></td></tr>{% endfor %}</tbody></table></div>
+  {% else %}<div class="empty"><span class="empty-icon">{{ icon('video') }}</span><h3>Талдау журналы әзірге бос</h3><p>Алғашқы бейнеңізді жоғарыдағы форма арқылы жүктеңіз.</p></div>{% endif %}
+</section>
+{% endblock %}

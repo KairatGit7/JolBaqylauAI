@@ -1,0 +1,141 @@
+{
+  "images": 4,
+  "iou_threshold": 0.5,
+  "true_positive": 1,
+  "false_positive": 0,
+  "false_negative": 5,
+  "precision": 1.0,
+  "recall": 0.16666666666666666,
+  "f1": 0.2857142857142857,
+  "per_class": {
+    "longitudinal_crack": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "transverse_crack": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "alligator_crack": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "pothole": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 2,
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "f1": 0.5
+    }
+  },
+  "confidence_threshold": 0.6,
+  "model": "dronefreak/rdd2022-yolov8n",
+  "revision": "acf216a43d796f7910fc854f662c1e9cfa03fc01",
+  "provenance": "Published RDD2022 test subset; four images, six boxes; not independent local validation",
+  "skipped_unlabeled": [],
+  "records": [
+    {
+      "image": "China_Drone_000008.jpg",
+      "truth": [
+        {
+          "category": "transverse_crack",
+          "bbox": [
+            55.99974399999999,
+            351.000064,
+            358.99980800000003,
+            450.999808
+          ]
+        }
+      ],
+      "predictions": []
+    },
+    {
+      "image": "China_Drone_000099.jpg",
+      "truth": [
+        {
+          "category": "longitudinal_crack",
+          "bbox": [
+            83.00006400000001,
+            161.99987199999998,
+            274.000128,
+            416.0
+          ]
+        },
+        {
+          "category": "pothole",
+          "bbox": [
+            138.00012800000002,
+            446.000128,
+            279.00032,
+            512.0
+          ]
+        }
+      ],
+      "predictions": []
+    },
+    {
+      "image": "China_Drone_000101.jpg",
+      "truth": [
+        {
+          "category": "pothole",
+          "bbox": [
+            221.99987199999998,
+            239.99974400000002,
+            420.0,
+            316.999936
+          ]
+        }
+      ],
+      "predictions": []
+    },
+    {
+      "image": "China_Drone_000116.jpg",
+      "truth": [
+        {
+          "category": "pothole",
+          "bbox": [
+            23.00006400000001,
+            1.0001919999999984,
+            202.999808,
+            169.000192
+          ]
+        },
+        {
+          "category": "alligator_crack",
+          "bbox": [
+            71.000064,
+            381.999616,
+            167.000064,
+            457.99987200000004
+          ]
+        }
+      ],
+      "predictions": [
+        {
+          "category": "pothole",
+          "confidence": 0.6442174315452576,
+          "bbox": [
+            28.08,
+            0.0,
+            203.35,
+            128.23
+          ]
+        }
+      ]
+    }
+  ],
+  "limitation": "Шағын жиынтық Қазақстандағы сапаны растауға жеткіліксіз. Бұл mAP немесе жіктеу accuracy көрсеткіші емес."
+}

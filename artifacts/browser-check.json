@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "browser": "Chromium",
+  "video_id": "4990b5eabbfd47f0ae7d9ea61742f6b2",
+  "job": {
+    "error": null,
+    "frames": 12,
+    "progress": 100,
+    "status": "completed"
+  },
+  "demo_events": 7,
+  "demo_unlocated": true,
+  "pdf_kazakh_text_verified": true,
+  "mobile_width": 390,
+  "js_errors": [],
+  "raw_access_without_login": 302,
+  "report_url": "http://127.0.0.1:5000/reports/1faa4d60b90e4c44af01b4c96fcba107",
+  "note": "Нақты модель; RDD2022 слайд-бейне. GPS пен шарт ойдан енгізілмеген."
+}

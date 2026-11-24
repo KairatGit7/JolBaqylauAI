@@ -1,0 +1,87 @@
+[
+  {
+    "file": "jol/static/vendor/leaflet/leaflet.css",
+    "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",
+    "sha256": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6"
+  },
+  {
+    "file": "jol/static/vendor/leaflet/leaflet.js",
+    "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",
+    "sha256": "db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a"
+  },
+  {
+    "file": "jol/static/vendor/leaflet/images/layers.png",
+    "url": "https://unpkg.com/leaflet@1.9.4/dist/images/layers.png",
+    "sha256": "1dbbe9d028e292f36fcba8f8b3a28d5e8932754fc2215b9ac69e4cdecf5107c6"
+  },
+  {
+    "file": "jol/static/vendor/leaflet/images/layers-2x.png",
+    "url": "https://unpkg.com/leaflet@1.9.4/dist/images/layers-2x.png",
+    "sha256": "066daca850d8ffbef007af00b06eac0015728dee279c51f3cb6c716df7c42edf"
+  },
+  {
+    "file": "jol/static/vendor/leaflet/images/marker-icon.png",
+    "url": "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+    "sha256": "574c3a5cca85f4114085b6841596d62f00d7c892c7b03f28cbfa301deb1dc437"
+  },
+  {
+    "file": "jol/static/vendor/leaflet/images/marker-icon-2x.png",
+    "url": "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+    "sha256": "00179c4c1ee830d3a108412ae0d294f55776cfeb085c60129a39aa6fc4ae2528"
+  },
+  {
+    "file": "jol/static/vendor/leaflet/images/marker-shadow.png",
+    "url": "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+    "sha256": "264f5c640339f042dd729062cfc04c17f8ea0f29882b538e3848ed8f10edb4da"
+  },
+  {
+    "file": "jol/static/vendor/leaflet/LICENSE",
+    "url": "https://raw.githubusercontent.com/Leaflet/Leaflet/v1.9.4/LICENSE",
+    "sha256": "53e8dc25862014e4324741ca18fbe3611e11d42ef69f59f86ea8c5389647d4cb"
+  },
+  {
+    "file": "jol/static/fonts/LICENSE",
+    "url": "https://raw.githubusercontent.com/dejavu-fonts/dejavu-fonts/master/LICENSE",
+    "sha256": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93"
+  },
+  {
+    "file": "samples/rdd2022/China_Drone_000008.jpg",
+    "url": "https://huggingface.co/datasets/dronefreak/RDD2022/resolve/main/data/images/test/shard_000/China_Drone_000008.jpg",
+    "sha256": "a9754681705e659d7ba568ce813d40029bf4bb8cdd24bca88df510cb94bd3b46"
+  },
+  {
+    "file": "samples/rdd2022/China_Drone_000008.txt",
+    "url": "https://huggingface.co/datasets/dronefreak/RDD2022/resolve/main/data/labels/test/shard_000/China_Drone_000008.txt",
+    "sha256": "a9b46362529ede91b536eab9eee166d94abd5d4f5007564dbdb50ad9898c0f24"
+  },
+  {
+    "file": "samples/rdd2022/China_Drone_000099.jpg",
+    "url": "https://huggingface.co/datasets/dronefreak/RDD2022/resolve/main/data/images/test/shard_000/China_Drone_000099.jpg",
+    "sha256": "5aa12dc25d9a4037e66f37977534680ec6b41cc6306d049e0936759f1202625a"
+  },
+  {
+    "file": "samples/rdd2022/China_Drone_000099.txt",
+    "url": "https://huggingface.co/datasets/dronefreak/RDD2022/resolve/main/data/labels/test/shard_000/China_Drone_000099.txt",
+    "sha256": "6ed45f8399e5ec3399cf0514c16131ff9316f4aee389441c1b216aedcca0905d"
+  },
+  {
+    "file": "samples/rdd2022/China_Drone_000101.jpg",
+    "url": "https://huggingface.co/datasets/dronefreak/RDD2022/resolve/main/data/images/test/shard_000/China_Drone_000101.jpg",
+    "sha256": "1c2bbef6ed1e4bd3476d73f405a0b76e01cf445777b17ac3fc673fa16ca5685e"
+  },
+  {
+    "file": "samples/rdd2022/China_Drone_000101.txt",
+    "url": "https://huggingface.co/datasets/dronefreak/RDD2022/resolve/main/data/labels/test/shard_000/China_Drone_000101.txt",
+    "sha256": "b32560e6212b9bf3a9b018ffabd9e78b25b2afc8d9af92fae1fc293525470187"
+  },
+  {
+    "file": "samples/rdd2022/China_Drone_000116.jpg",
+    "url": "https://huggingface.co/datasets/dronefreak/RDD2022/resolve/main/data/images/test/shard_000/China_Drone_000116.jpg",
+    "sha256": "6e9b5142312b6a09eee911a6bfb99a64d4f7e89f49ed55c4adc306391859b93e"
+  },
+  {
+    "file": "samples/rdd2022/China_Drone_000116.txt",
+    "url": "https://huggingface.co/datasets/dronefreak/RDD2022/resolve/main/data/labels/test/shard_000/China_Drone_000116.txt",
+    "sha256": "af3c87bcac49df6d8ab459ccd4f879b203345d4489d2e7b531657aad318f3604"
+  }
+]

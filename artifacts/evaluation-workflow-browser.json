@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "isolated_database": true,
+  "inference": "explicit UI fixture, not performance evidence",
+  "checks": [
+    "pointer drawing in reverse direction",
+    "numeric keyboard alternative",
+    "undo",
+    "explicit negative marking",
+    "complete-label confirmation",
+    "YOLO ZIP download",
+    "same-validation comparison and Kazakh report",
+    "320/390/768px editor layout",
+    "immutable JSON truth snapshot"
+  ],
+  "js_errors": []
+}

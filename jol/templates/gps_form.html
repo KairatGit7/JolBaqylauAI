@@ -1,0 +1,12 @@
+<details class="card detail-card section-gap" id="gps-track" data-url-panel>
+  <summary>{{ icon('pin') }} GPS трегін қосу / уақытты сәйкестендіру</summary>
+  <p class="help" id="gps-help">CSV: <code translate="no">timestamp,latitude,longitude</code> немесе уақыт белгілері бар GPX. GPS осы сапардан алынуы тиіс. Координат камераның орнын көрсетеді, ақаудың геодезиялық дәл орнын емес.</p>
+  <form method="post" action="/videos/{{ video.id }}/gps" enctype="multipart/form-data" data-dirty-warning>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <div class="form-row"><label>GPS файлы<input type="file" name="gps" accept=".csv,.gpx" required aria-describedby="gps-help"></label><label>Уақыт ығысуы, секунд<input type="number" name="offset" value="{{ video.gps_offset or 0 }}" step="0.01" min="-86400" max="86400" required aria-describedby="gps-offset-help"></label></div>
+    <p class="help" id="gps-offset-help">GPS уақыты = бейне секунды + ығысу. timestamp — салыстырмалы секунд немесе ISO 8601 (+05:00/Z). Абсолютті уақыт түсірілімнің басталуына қатысты есептеледі. 5 секундтан үлкен үзілісте орын берілмейді.</p>
+    <label>Дереккөз / құрылғы<input name="source" required maxlength="200" value="{{ video.gps_source or '' }}" placeholder="Құрылғы, сапар күні, файлдың шығу тегі…"></label>
+    <label><input type="checkbox" name="verified" value="yes" required> GPS трегінің осы бейнеге сәйкестігі тексерілді</label>
+    <button class="button secondary" type="submit">{{ icon('upload') }} GPS импорттау</button>
+  </form>
+</details>

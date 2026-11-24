@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% from 'ui.html' import icon %}
+{% block title %}Эталонды белгілеу · ЖолБақылау AI{% endblock %}
+{% block content %}
+<a class="back-link" href="/evaluation">{{ icon('arrow') }} Бағалау жинағы</a><div class="page-heading"><div><div class="eyebrow">ЭТАЛОН · AI БОЛЖАМЫ ЕМЕС</div><h1>Эталонды белгілеу</h1><p>{{ sample.width }} × {{ sample.height }} · {{ 'Сурет' if image else 'Бейне кадры ' ~ sample.frame_index }} · нұсқа {{ sample.revision }}</p></div><a class="button secondary" href="{% if image %}/images/{{ image.id }}{% else %}/videos/{{ video.id }}{% endif %}" target="_blank" rel="noopener">AI болжамдарын тексеру {{ icon('external') }}</a></div>
+<p class="help">AI болжамдарын бөлек бетте «Дұрыс анықталды» / «Қате анықталды» деп тексере аласыз. Ол шешімдер эталон қораптарына автоматты көшірілмейді. Эталонға AI өткізіп алған ақауларды да қосыңыз.</p>
+<form class="card" method="post" id="annotation-form" data-dirty-warning>
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="revision" value="{{ sample.revision }}"><input type="hidden" id="gt-boxes" name="boxes" value="{{ (sample.boxes or [])|tojson|forceescape }}">
+<p id="drawing-help" class="help">Суретте басып, қораптың қарсы бұрышына сүйреңіз. Немесе төменде пиксель координаттарын енгізіңіз. Барлық көрінетін ақауды белгілеңіз; тек ойықтарды белгілеу жеткіліксіз. Escape — аяқталмаған сызуды тоқтату.</p>
+<svg id="gt-canvas" class="gt-canvas" viewBox="0 0 {{ sample.width }} {{ sample.height }}" width="{{ sample.width }}" height="{{ sample.height }}" data-width="{{ sample.width }}" data-height="{{ sample.height }}" role="img" aria-label="Эталон қораптарын салуға арналған бастапқы сурет" aria-describedby="drawing-help"><image href="/evaluation/samples/{{ sample.id }}/image.png" width="{{ sample.width }}" height="{{ sample.height }}"/><g id="gt-shapes" aria-hidden="true"></g><rect id="gt-draft" hidden fill="#087f8c22" stroke="#087f8c" stroke-width="2"/></svg>
+<noscript><p>Қораптарды салу үшін JavaScript қосыңыз.</p></noscript>
+<label for="gt-category">Ақау санаты<select id="gt-category">{% for key,label in labels.items() %}<option value="{{ key }}" {{ 'selected' if key == 'pothole' }}>{{ label }}</option>{% endfor %}</select></label>
+<div class="gt-coordinates">{% for name,label,limit in [('x1','Сол жақ X',sample.width),('y1','Жоғарғы Y',sample.height),('x2','Оң жақ X',sample.width),('y2','Төменгі Y',sample.height)] %}<label>{{ label }}<input id="gt-{{ name }}" name="box-{{ name }}" type="number" step="any" min="0" max="{{ limit }}"></label>{% endfor %}</div>
+<div class="review-actions"><button class="button secondary small" id="gt-add" type="button">Қорап қосу</button><button class="button secondary small" id="gt-undo" type="button">Соңғы өзгерісті қайтару</button></div><p id="gt-status" class="help" role="status"></p>
+<div class="table-wrap"><table><caption class="sr-only">Эталон қораптары</caption><thead><tr><th scope="col">Санат</th><th scope="col">Қорап, пиксель</th><th scope="col">Әрекет</th></tr></thead><tbody id="gt-list" data-labels="{{ labels|tojson|forceescape }}"></tbody></table></div>
+<label><input type="checkbox" name="negative" id="gt-negative" value="yes" {{ 'checked' if sample.negative }}> Ақау жоқ — суреттегі жолда төрт санаттың ешқайсысы көрінбейді</label>
+<div class="form-row"><label>Учаске / сапар тобы<input name="road_group" maxlength="120" value="{{ sample.road_group }}" {{ 'required' if image }} placeholder="Мысалы: Абай көшесі, 1–2 қиылыс, бір сапар…"></label><label>Топтың бөлімі<select name="split">{% for key,label in splits.items() %}<option value="{{ key }}" {{ 'selected' if sample.split == key }}>{{ label }} ({{ key }})</option>{% endfor %}</select></label></div>
+<p class="help">Таңдалған бөлім осы бейнеге, бірдей суретке немесе учаскеге байланысқан барлық кадрға қолданылады. Фотосуреттерде бір жолдың/сапардың барлық кадрына ортақ атау беріңіз. Белгісіз жақын көшірмелер автоматты табылмайды.</p>
+<label><input type="checkbox" name="complete" value="yes" required> Кадрды толық қарап, барлық көрінетін ақауды белгілеу немесе ақаудың жоқтығын тексеру аяқталды</label>
+<button class="button primary" type="submit">{{ icon('check') }} Эталонды сақтау</button>
+</form>
+{% endblock %}
+{% block scripts %}<script src="/static/annotation.js" defer></script>{% endblock %}

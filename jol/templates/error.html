@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% from 'ui.html' import icon %}
+{% block title %}Сұрауды тексеріңіз · ЖолБақылау AI{% endblock %}
+{% block content %}<section class="card empty"><span class="empty-icon">{{ icon('info') }}</span><h1>{{ message }}</h1><p>Бақылау орталығына оралып, қажетті жазбаны қайта ашыңыз.</p><a class="button primary" href="/">Басты бетке оралу {{ icon('arrow') }}</a></section>{% endblock %}

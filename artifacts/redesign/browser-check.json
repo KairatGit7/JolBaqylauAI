@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-22T08:29:01.501753+00:00",
+  "browser": "Chromium",
+  "video_id": "9d46ed805bab4964a70af608c58f517f",
+  "job": {
+    "error": null,
+    "frames": 12,
+    "progress": 100,
+    "status": "completed"
+  },
+  "reused_existing_analysis": true,
+  "demo_events": 1,
+  "demo_unlocated": true,
+  "pdf_kazakh_text_verified": true,
+  "widths": [
+    320,
+    390,
+    768
+  ],
+  "js_errors": [],
+  "accessibility_pages": 20,
+  "accessibility_violations": {},
+  "checks": [
+    "Kazakh inline validation, first-error focus, authenticated login",
+    "Keyboard skip-to-content link",
+    "Upload validation, drag/drop, unsaved-input guard, real demo result, protected evidence",
+    "Evidence panel deep links survive reload",
+    "Unjustified confirmation rejected; original observation preserved",
+    "Map filters, URL reload/back/reset, empty state, request-failure recovery",
+    "Report generation, Kazakh PDF text, complaint download and clipboard",
+    "320px, 390px and 768px layouts without page overflow",
+    "Mobile menu focus containment, Escape/return focus, navigation, reduced motion"
+  ],
+  "report_url": "http://127.0.0.1:5000/reports/085045e1a4984df6a6e2d2c9462d4b75",
+  "note": "Real RDD2022 demo evidence. Duplicate upload reuses existing inference. No GPS or contracts invented."
+}

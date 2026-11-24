@@ -1,0 +1,2784 @@
+{
+  "model": "dronefreak/rdd2022-yolov8n",
+  "revision": "acf216a43d796f7910fc854f662c1e9cfa03fc01",
+  "before_confidence": 0.3,
+  "after_confidence": 0.6,
+  "temporal_min_hits": 2,
+  "temporal_iou": 0.2,
+  "frame_duplicate_iou": 0.5,
+  "match_iou": 0.5,
+  "labeled_images": {
+    "metrics": {
+      "before": {
+        "images": 4,
+        "iou_threshold": 0.5,
+        "true_positive": 4,
+        "false_positive": 3,
+        "false_negative": 2,
+        "precision": 0.5714285714285714,
+        "recall": 0.6666666666666666,
+        "f1": 0.6153846153846154,
+        "per_class": {
+          "longitudinal_crack": {
+            "true_positive": 1,
+            "false_positive": 2,
+            "false_negative": 0,
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5
+          },
+          "transverse_crack": {
+            "true_positive": 1,
+            "false_positive": 0,
+            "false_negative": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "alligator_crack": {
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "pothole": {
+            "true_positive": 2,
+            "false_positive": 1,
+            "false_negative": 1,
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1": 0.6666666666666666
+          }
+        }
+      },
+      "threshold_only": {
+        "images": 4,
+        "iou_threshold": 0.5,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 5,
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "f1": 0.2857142857142857,
+        "per_class": {
+          "longitudinal_crack": {
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "transverse_crack": {
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "alligator_crack": {
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 1,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "pothole": {
+            "true_positive": 1,
+            "false_positive": 0,
+            "false_negative": 2,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5
+          }
+        }
+      }
+    },
+    "records": [
+      {
+        "image": "China_Drone_000008.jpg",
+        "truth": [
+          {
+            "category": "transverse_crack",
+            "bbox": [
+              55.99974399999999,
+              351.000064,
+              358.99980800000003,
+              450.999808
+            ]
+          }
+        ],
+        "before": [
+          {
+            "category": "transverse_crack",
+            "confidence": 0.5361812710762024,
+            "bbox": [
+              42.47,
+              342.48,
+              381.22,
+              457.14
+            ]
+          },
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.40451639890670776,
+            "bbox": [
+              61.93,
+              341.73,
+              372.24,
+              456.61
+            ]
+          }
+        ],
+        "threshold_only": []
+      },
+      {
+        "image": "China_Drone_000099.jpg",
+        "truth": [
+          {
+            "category": "longitudinal_crack",
+            "bbox": [
+              83.00006400000001,
+              161.99987199999998,
+              274.000128,
+              416.0
+            ]
+          },
+          {
+            "category": "pothole",
+            "bbox": [
+              138.00012800000002,
+              446.000128,
+              279.00032,
+              512.0
+            ]
+          }
+        ],
+        "before": [
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.5066604018211365,
+            "bbox": [
+              86.09,
+              165.99,
+              262.03,
+              408.86
+            ]
+          },
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.34010109305381775,
+            "bbox": [
+              85.02,
+              315.9,
+              165.22,
+              411.92
+            ]
+          }
+        ],
+        "threshold_only": []
+      },
+      {
+        "image": "China_Drone_000101.jpg",
+        "truth": [
+          {
+            "category": "pothole",
+            "bbox": [
+              221.99987199999998,
+              239.99974400000002,
+              420.0,
+              316.999936
+            ]
+          }
+        ],
+        "before": [
+          {
+            "category": "pothole",
+            "confidence": 0.5420909523963928,
+            "bbox": [
+              215.24,
+              244.02,
+              422.75,
+              318.6
+            ]
+          }
+        ],
+        "threshold_only": []
+      },
+      {
+        "image": "China_Drone_000116.jpg",
+        "truth": [
+          {
+            "category": "pothole",
+            "bbox": [
+              23.00006400000001,
+              1.0001919999999984,
+              202.999808,
+              169.000192
+            ]
+          },
+          {
+            "category": "alligator_crack",
+            "bbox": [
+              71.000064,
+              381.999616,
+              167.000064,
+              457.99987200000004
+            ]
+          }
+        ],
+        "before": [
+          {
+            "category": "pothole",
+            "confidence": 0.6442174315452576,
+            "bbox": [
+              28.08,
+              0.0,
+              203.35,
+              128.23
+            ]
+          },
+          {
+            "category": "pothole",
+            "confidence": 0.520138680934906,
+            "bbox": [
+              14.85,
+              49.91,
+              203.85,
+              159.38
+            ]
+          }
+        ],
+        "threshold_only": [
+          {
+            "category": "pothole",
+            "confidence": 0.6442174315452576,
+            "bbox": [
+              28.08,
+              0.0,
+              203.35,
+              128.23
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "slideshow": {
+    "metrics": {
+      "before": {
+        "images": 12,
+        "iou_threshold": 0.5,
+        "true_positive": 12,
+        "false_positive": 9,
+        "false_negative": 6,
+        "precision": 0.5714285714285714,
+        "recall": 0.6666666666666666,
+        "f1": 0.6153846153846154,
+        "per_class": {
+          "longitudinal_crack": {
+            "true_positive": 3,
+            "false_positive": 6,
+            "false_negative": 0,
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5
+          },
+          "transverse_crack": {
+            "true_positive": 3,
+            "false_positive": 0,
+            "false_negative": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "alligator_crack": {
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "pothole": {
+            "true_positive": 6,
+            "false_positive": 3,
+            "false_negative": 3,
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1": 0.6666666666666666
+          }
+        }
+      },
+      "threshold_only": {
+        "images": 12,
+        "iou_threshold": 0.5,
+        "true_positive": 3,
+        "false_positive": 0,
+        "false_negative": 15,
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "f1": 0.2857142857142857,
+        "per_class": {
+          "longitudinal_crack": {
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "transverse_crack": {
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "alligator_crack": {
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "pothole": {
+            "true_positive": 3,
+            "false_positive": 0,
+            "false_negative": 6,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5
+          }
+        }
+      },
+      "threshold_and_temporal": {
+        "images": 12,
+        "iou_threshold": 0.5,
+        "true_positive": 3,
+        "false_positive": 0,
+        "false_negative": 15,
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "f1": 0.2857142857142857,
+        "per_class": {
+          "longitudinal_crack": {
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "transverse_crack": {
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "alligator_crack": {
+            "true_positive": 0,
+            "false_positive": 0,
+            "false_negative": 3,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "pothole": {
+            "true_positive": 3,
+            "false_positive": 0,
+            "false_negative": 6,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1": 0.5
+          }
+        }
+      }
+    },
+    "frames": [
+      {
+        "frame_index": 0,
+        "timestamp": 0.0,
+        "before": [
+          {
+            "category": "transverse_crack",
+            "confidence": 0.534558892250061,
+            "bbox": [
+              84.79,
+              464.87,
+              472.68,
+              604.93
+            ]
+          },
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.39776840806007385,
+            "bbox": [
+              94.93,
+              462.68,
+              468.57,
+              604.77
+            ]
+          }
+        ],
+        "threshold_only": [],
+        "truth": [
+          {
+            "category": "transverse_crack",
+            "bbox": [
+              69.99967999999998,
+              478.75008,
+              448.74976000000004,
+              603.7497599999999
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 10,
+        "timestamp": 1.0,
+        "before": [
+          {
+            "category": "transverse_crack",
+            "confidence": 0.4944263696670532,
+            "bbox": [
+              83.49,
+              464.6,
+              469.82,
+              606.42
+            ]
+          },
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.4001980125904083,
+            "bbox": [
+              89.08,
+              463.05,
+              465.14,
+              606.39
+            ]
+          }
+        ],
+        "threshold_only": [],
+        "truth": [
+          {
+            "category": "transverse_crack",
+            "bbox": [
+              69.99967999999998,
+              478.75008,
+              448.74976000000004,
+              603.7497599999999
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 20,
+        "timestamp": 2.0,
+        "before": [
+          {
+            "category": "transverse_crack",
+            "confidence": 0.4944263696670532,
+            "bbox": [
+              83.49,
+              464.6,
+              469.82,
+              606.42
+            ]
+          },
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.4001980125904083,
+            "bbox": [
+              89.08,
+              463.05,
+              465.14,
+              606.39
+            ]
+          }
+        ],
+        "threshold_only": [],
+        "truth": [
+          {
+            "category": "transverse_crack",
+            "bbox": [
+              69.99967999999998,
+              478.75008,
+              448.74976000000004,
+              603.7497599999999
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 30,
+        "timestamp": 3.0,
+        "before": [
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.43785613775253296,
+            "bbox": [
+              108.91,
+              243.21,
+              334.08,
+              552.05
+            ]
+          },
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.31713995337486267,
+            "bbox": [
+              102.9,
+              433.47,
+              206.95,
+              556.02
+            ]
+          }
+        ],
+        "threshold_only": [],
+        "truth": [
+          {
+            "category": "longitudinal_crack",
+            "bbox": [
+              103.75008000000001,
+              242.49983999999998,
+              342.50016000000005,
+              560.0
+            ]
+          },
+          {
+            "category": "pothole",
+            "bbox": [
+              172.50016000000002,
+              597.50016,
+              348.7504,
+              680.0
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 40,
+        "timestamp": 4.0,
+        "before": [
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.43785613775253296,
+            "bbox": [
+              108.91,
+              243.21,
+              334.08,
+              552.05
+            ]
+          },
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.31713995337486267,
+            "bbox": [
+              102.9,
+              433.47,
+              206.95,
+              556.02
+            ]
+          }
+        ],
+        "threshold_only": [],
+        "truth": [
+          {
+            "category": "longitudinal_crack",
+            "bbox": [
+              103.75008000000001,
+              242.49983999999998,
+              342.50016000000005,
+              560.0
+            ]
+          },
+          {
+            "category": "pothole",
+            "bbox": [
+              172.50016000000002,
+              597.50016,
+              348.7504,
+              680.0
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 50,
+        "timestamp": 5.0,
+        "before": [
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.43785613775253296,
+            "bbox": [
+              108.91,
+              243.21,
+              334.08,
+              552.05
+            ]
+          },
+          {
+            "category": "longitudinal_crack",
+            "confidence": 0.31713995337486267,
+            "bbox": [
+              102.9,
+              433.47,
+              206.95,
+              556.02
+            ]
+          }
+        ],
+        "threshold_only": [],
+        "truth": [
+          {
+            "category": "longitudinal_crack",
+            "bbox": [
+              103.75008000000001,
+              242.49983999999998,
+              342.50016000000005,
+              560.0
+            ]
+          },
+          {
+            "category": "pothole",
+            "bbox": [
+              172.50016000000002,
+              597.50016,
+              348.7504,
+              680.0
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 60,
+        "timestamp": 6.0,
+        "before": [
+          {
+            "category": "pothole",
+            "confidence": 0.41023677587509155,
+            "bbox": [
+              270.27,
+              342.01,
+              526.17,
+              443.22
+            ]
+          },
+          {
+            "category": "pothole",
+            "confidence": 0.3947581648826599,
+            "bbox": [
+              315.2,
+              342.41,
+              525.29,
+              403.96
+            ]
+          }
+        ],
+        "threshold_only": [],
+        "truth": [
+          {
+            "category": "pothole",
+            "bbox": [
+              277.49983999999995,
+              339.99968,
+              525.0,
+              436.24992
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 70,
+        "timestamp": 7.0,
+        "before": [
+          {
+            "category": "pothole",
+            "confidence": 0.41023677587509155,
+            "bbox": [
+              270.27,
+              342.01,
+              526.17,
+              443.22
+            ]
+          },
+          {
+            "category": "pothole",
+            "confidence": 0.3947581648826599,
+            "bbox": [
+              315.2,
+              342.41,
+              525.29,
+              403.96
+            ]
+          }
+        ],
+        "threshold_only": [],
+        "truth": [
+          {
+            "category": "pothole",
+            "bbox": [
+              277.49983999999995,
+              339.99968,
+              525.0,
+              436.24992
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 80,
+        "timestamp": 8.0,
+        "before": [
+          {
+            "category": "pothole",
+            "confidence": 0.41023677587509155,
+            "bbox": [
+              270.27,
+              342.01,
+              526.17,
+              443.22
+            ]
+          },
+          {
+            "category": "pothole",
+            "confidence": 0.3947581648826599,
+            "bbox": [
+              315.2,
+              342.41,
+              525.29,
+              403.96
+            ]
+          }
+        ],
+        "threshold_only": [],
+        "truth": [
+          {
+            "category": "pothole",
+            "bbox": [
+              277.49983999999995,
+              339.99968,
+              525.0,
+              436.24992
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 90,
+        "timestamp": 9.0,
+        "before": [
+          {
+            "category": "pothole",
+            "confidence": 0.6782191395759583,
+            "bbox": [
+              36.42,
+              48.65,
+              253.39,
+              213.42
+            ]
+          }
+        ],
+        "threshold_only": [
+          {
+            "category": "pothole",
+            "confidence": 0.6782191395759583,
+            "bbox": [
+              36.42,
+              48.65,
+              253.39,
+              213.42
+            ]
+          }
+        ],
+        "truth": [
+          {
+            "category": "pothole",
+            "bbox": [
+              28.75008000000001,
+              41.25024,
+              253.74976,
+              251.25024
+            ]
+          },
+          {
+            "category": "alligator_crack",
+            "bbox": [
+              88.75008,
+              517.4995200000001,
+              208.75008000000003,
+              612.4998400000001
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 100,
+        "timestamp": 10.0,
+        "before": [
+          {
+            "category": "pothole",
+            "confidence": 0.6782191395759583,
+            "bbox": [
+              36.42,
+              48.65,
+              253.39,
+              213.42
+            ]
+          }
+        ],
+        "threshold_only": [
+          {
+            "category": "pothole",
+            "confidence": 0.6782191395759583,
+            "bbox": [
+              36.42,
+              48.65,
+              253.39,
+              213.42
+            ]
+          }
+        ],
+        "truth": [
+          {
+            "category": "pothole",
+            "bbox": [
+              28.75008000000001,
+              41.25024,
+              253.74976,
+              251.25024
+            ]
+          },
+          {
+            "category": "alligator_crack",
+            "bbox": [
+              88.75008,
+              517.4995200000001,
+              208.75008000000003,
+              612.4998400000001
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 110,
+        "timestamp": 11.0,
+        "before": [
+          {
+            "category": "pothole",
+            "confidence": 0.6782191395759583,
+            "bbox": [
+              36.42,
+              48.65,
+              253.39,
+              213.42
+            ]
+          }
+        ],
+        "threshold_only": [
+          {
+            "category": "pothole",
+            "confidence": 0.6782191395759583,
+            "bbox": [
+              36.42,
+              48.65,
+              253.39,
+              213.42
+            ]
+          }
+        ],
+        "truth": [
+          {
+            "category": "pothole",
+            "bbox": [
+              28.75008000000001,
+              41.25024,
+              253.74976,
+              251.25024
+            ]
+          },
+          {
+            "category": "alligator_crack",
+            "bbox": [
+              88.75008,
+              517.4995200000001,
+              208.75008000000003,
+              612.4998400000001
+            ]
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "category": "pothole",
+        "confidence": 0.6782191395759583,
+        "bbox": [
+          36.42,
+          48.65,
+          253.39,
+          213.42
+        ],
+        "start_seconds": 9.0,
+        "end_seconds": 11.0,
+        "evidence_name": "90",
+        "hits": [
+          {
+            "category": "pothole",
+            "confidence": 0.6782191395759583,
+            "bbox": [
+              36.42,
+              48.65,
+              253.39,
+              213.42
+            ],
+            "timestamp": 9.0,
+            "video_id": "evaluation-only"
+          },
+          {
+            "category": "pothole",
+            "confidence": 0.6782191395759583,
+            "bbox": [
+              36.42,
+              48.65,
+              253.39,
+              213.42
+            ],
+            "timestamp": 10.0,
+            "video_id": "evaluation-only"
+          },
+          {
+            "category": "pothole",
+            "confidence": 0.6782191395759583,
+            "bbox": [
+              36.42,
+              48.65,
+              253.39,
+              213.42
+            ],
+            "timestamp": 11.0,
+            "video_id": "evaluation-only"
+          }
+        ],
+        "filter_status": "passed"
+      }
+    ]
+  },
+  "road_video": {
+    "sha256": "8469217276840d3641615c474fb38216ac4775cc5de35ce8e1f9f703c14e3c9c",
+    "sampled_frames": 170,
+    "annotations": {
+      "version": 1,
+      "video_sha256": "8469217276840d3641615c474fb38216ac4775cc5de35ce8e1f9f703c14e3c9c",
+      "annotation_provenance": "Provisional visual annotations by the coding assistant on original video frames, 2026-11-22. Not human-adjudicated ground truth. Only the listed regions and pothole class are labeled; the rest of each image is unscored.",
+      "sampling_seconds": 1.0,
+      "regions": [
+        {
+          "frame_index": 1080,
+          "kind": "manhole_cover",
+          "bbox": [
+            298,
+            278,
+            412,
+            325
+          ],
+          "truth": [],
+          "category": "pothole",
+          "note": "Patterned, closed metal cover; no open pothole visible in this box."
+        },
+        {
+          "frame_index": 1110,
+          "kind": "manhole_cover",
+          "bbox": [
+            342,
+            298,
+            484,
+            355
+          ],
+          "truth": [],
+          "category": "pothole",
+          "note": "Same cover one sampled frame later."
+        },
+        {
+          "frame_index": 1140,
+          "kind": "manhole_cover",
+          "bbox": [
+            527,
+            326,
+            640,
+            360
+          ],
+          "truth": [],
+          "category": "pothole",
+          "note": "Same cover partly outside the frame."
+        },
+        {
+          "frame_index": 1080,
+          "kind": "road_marking",
+          "bbox": [
+            340,
+            157,
+            620,
+            202
+          ],
+          "truth": [],
+          "category": "pothole",
+          "note": "Zebra crossing paint; no pothole visible within the selected paint region."
+        },
+        {
+          "frame_index": 1110,
+          "kind": "road_marking",
+          "bbox": [
+            350,
+            168,
+            620,
+            214
+          ],
+          "truth": [],
+          "category": "pothole",
+          "note": "Zebra crossing paint."
+        },
+        {
+          "frame_index": 1140,
+          "kind": "road_marking",
+          "bbox": [
+            410,
+            179,
+            630,
+            224
+          ],
+          "truth": [],
+          "category": "pothole",
+          "note": "Zebra crossing paint."
+        },
+        {
+          "frame_index": 1800,
+          "kind": "shadow",
+          "bbox": [
+            40,
+            169,
+            540,
+            197
+          ],
+          "truth": [],
+          "category": "pothole",
+          "note": "Long shadows crossing the road; no pothole visible in the selected strip."
+        }
+      ],
+      "unscored": [
+        {
+          "frame_index": 3000,
+          "kind": "asphalt_patch",
+          "bbox": [
+            270,
+            115,
+            470,
+            165
+          ],
+          "note": "Patch-like tonal variation; resolution and lighting do not establish whether it is a repair or damage. No negative label assigned. Requires human adjudication."
+        }
+      ]
+    },
+    "metrics_by_region_kind": {
+      "manhole_cover": {
+        "before": {
+          "images": 3,
+          "iou_threshold": 0.5,
+          "true_positive": 0,
+          "false_positive": 3,
+          "false_negative": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0,
+          "per_class": {
+            "longitudinal_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "transverse_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "alligator_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "pothole": {
+              "true_positive": 0,
+              "false_positive": 3,
+              "false_negative": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            }
+          }
+        },
+        "threshold_only": {
+          "images": 3,
+          "iou_threshold": 0.5,
+          "true_positive": 0,
+          "false_positive": 2,
+          "false_negative": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0,
+          "per_class": {
+            "longitudinal_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "transverse_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "alligator_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "pothole": {
+              "true_positive": 0,
+              "false_positive": 2,
+              "false_negative": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            }
+          }
+        },
+        "threshold_and_temporal": {
+          "images": 3,
+          "iou_threshold": 0.5,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "per_class": {
+            "longitudinal_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "transverse_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "alligator_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "pothole": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        }
+      },
+      "road_marking": {
+        "before": {
+          "images": 3,
+          "iou_threshold": 0.5,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "per_class": {
+            "longitudinal_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "transverse_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "alligator_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "pothole": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        },
+        "threshold_only": {
+          "images": 3,
+          "iou_threshold": 0.5,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "per_class": {
+            "longitudinal_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "transverse_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "alligator_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "pothole": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        },
+        "threshold_and_temporal": {
+          "images": 3,
+          "iou_threshold": 0.5,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "per_class": {
+            "longitudinal_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "transverse_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "alligator_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "pothole": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        }
+      },
+      "shadow": {
+        "before": {
+          "images": 1,
+          "iou_threshold": 0.5,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "per_class": {
+            "longitudinal_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "transverse_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "alligator_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "pothole": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        },
+        "threshold_only": {
+          "images": 1,
+          "iou_threshold": 0.5,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "per_class": {
+            "longitudinal_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "transverse_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "alligator_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "pothole": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        },
+        "threshold_and_temporal": {
+          "images": 1,
+          "iou_threshold": 0.5,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "per_class": {
+            "longitudinal_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "transverse_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "alligator_crack": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "pothole": {
+              "true_positive": 0,
+              "false_positive": 0,
+              "false_negative": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        }
+      }
+    },
+    "before_events": [
+      {
+        "category": "pothole",
+        "confidence": 0.5025327205657959,
+        "bbox": [
+          300.46,
+          280.83,
+          409.08,
+          321.05
+        ],
+        "start_seconds": 36.036,
+        "end_seconds": 36.036,
+        "evidence_name": "1080",
+        "hits": [
+          {
+            "category": "pothole",
+            "confidence": 0.5025327205657959,
+            "bbox": [
+              300.46,
+              280.83,
+              409.08,
+              321.05
+            ],
+            "timestamp": 36.036,
+            "video_id": "evaluation-only"
+          }
+        ],
+        "filter_status": "passed"
+      },
+      {
+        "category": "pothole",
+        "confidence": 0.8391484022140503,
+        "bbox": [
+          344.77,
+          300.06,
+          480.01,
+          352.01
+        ],
+        "start_seconds": 37.037,
+        "end_seconds": 37.037,
+        "evidence_name": "1110",
+        "hits": [
+          {
+            "category": "pothole",
+            "confidence": 0.8391484022140503,
+            "bbox": [
+              344.77,
+              300.06,
+              480.01,
+              352.01
+            ],
+            "timestamp": 37.037,
+            "video_id": "evaluation-only"
+          }
+        ],
+        "filter_status": "passed"
+      },
+      {
+        "category": "pothole",
+        "confidence": 0.6063006520271301,
+        "bbox": [
+          529.1,
+          328.97,
+          639.53,
+          359.76
+        ],
+        "start_seconds": 38.038000000000004,
+        "end_seconds": 38.038000000000004,
+        "evidence_name": "1140",
+        "hits": [
+          {
+            "category": "pothole",
+            "confidence": 0.6063006520271301,
+            "bbox": [
+              529.1,
+              328.97,
+              639.53,
+              359.76
+            ],
+            "timestamp": 38.038000000000004,
+            "video_id": "evaluation-only"
+          }
+        ],
+        "filter_status": "passed"
+      }
+    ],
+    "threshold_events": [
+      {
+        "category": "pothole",
+        "confidence": 0.8391484022140503,
+        "bbox": [
+          344.77,
+          300.06,
+          480.01,
+          352.01
+        ],
+        "start_seconds": 37.037,
+        "end_seconds": 37.037,
+        "evidence_name": "1110",
+        "hits": [
+          {
+            "category": "pothole",
+            "confidence": 0.8391484022140503,
+            "bbox": [
+              344.77,
+              300.06,
+              480.01,
+              352.01
+            ],
+            "timestamp": 37.037,
+            "video_id": "evaluation-only"
+          }
+        ],
+        "filter_status": "passed"
+      },
+      {
+        "category": "pothole",
+        "confidence": 0.6063006520271301,
+        "bbox": [
+          529.1,
+          328.97,
+          639.53,
+          359.76
+        ],
+        "start_seconds": 38.038000000000004,
+        "end_seconds": 38.038000000000004,
+        "evidence_name": "1140",
+        "hits": [
+          {
+            "category": "pothole",
+            "confidence": 0.6063006520271301,
+            "bbox": [
+              529.1,
+              328.97,
+              639.53,
+              359.76
+            ],
+            "timestamp": 38.038000000000004,
+            "video_id": "evaluation-only"
+          }
+        ],
+        "filter_status": "passed"
+      }
+    ],
+    "filtered_events": [
+      {
+        "category": "pothole",
+        "confidence": 0.8391484022140503,
+        "bbox": [
+          344.77,
+          300.06,
+          480.01,
+          352.01
+        ],
+        "start_seconds": 37.037,
+        "end_seconds": 37.037,
+        "evidence_name": "1110",
+        "hits": [
+          {
+            "category": "pothole",
+            "confidence": 0.8391484022140503,
+            "bbox": [
+              344.77,
+              300.06,
+              480.01,
+              352.01
+            ],
+            "timestamp": 37.037,
+            "video_id": "evaluation-only"
+          }
+        ],
+        "filter_status": "suppressed"
+      },
+      {
+        "category": "pothole",
+        "confidence": 0.6063006520271301,
+        "bbox": [
+          529.1,
+          328.97,
+          639.53,
+          359.76
+        ],
+        "start_seconds": 38.038000000000004,
+        "end_seconds": 38.038000000000004,
+        "evidence_name": "1140",
+        "hits": [
+          {
+            "category": "pothole",
+            "confidence": 0.6063006520271301,
+            "bbox": [
+              529.1,
+              328.97,
+              639.53,
+              359.76
+            ],
+            "timestamp": 38.038000000000004,
+            "video_id": "evaluation-only"
+          }
+        ],
+        "filter_status": "suppressed"
+      }
+    ],
+    "frames": [
+      {
+        "frame_index": 0,
+        "timestamp": 0.0,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 30,
+        "timestamp": 1.0010000000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 60,
+        "timestamp": 2.0020000000000002,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 90,
+        "timestamp": 3.003,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 120,
+        "timestamp": 4.0040000000000004,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 150,
+        "timestamp": 5.005,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 180,
+        "timestamp": 6.006,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 210,
+        "timestamp": 7.007000000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 240,
+        "timestamp": 8.008000000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 270,
+        "timestamp": 9.009,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 300,
+        "timestamp": 10.01,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 330,
+        "timestamp": 11.011000000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 360,
+        "timestamp": 12.012,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 390,
+        "timestamp": 13.013,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 420,
+        "timestamp": 14.014000000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 450,
+        "timestamp": 15.015,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 480,
+        "timestamp": 16.016000000000002,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 510,
+        "timestamp": 17.017,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 540,
+        "timestamp": 18.018,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 570,
+        "timestamp": 19.019000000000002,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 600,
+        "timestamp": 20.02,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 630,
+        "timestamp": 21.021,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 660,
+        "timestamp": 22.022000000000002,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 690,
+        "timestamp": 23.023,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 720,
+        "timestamp": 24.024,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 750,
+        "timestamp": 25.025000000000002,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 780,
+        "timestamp": 26.026,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 810,
+        "timestamp": 27.027,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 840,
+        "timestamp": 28.028000000000002,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 870,
+        "timestamp": 29.029,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 900,
+        "timestamp": 30.03,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 930,
+        "timestamp": 31.031,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 960,
+        "timestamp": 32.032000000000004,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 990,
+        "timestamp": 33.033,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1020,
+        "timestamp": 34.034,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1050,
+        "timestamp": 35.035000000000004,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1080,
+        "timestamp": 36.036,
+        "before": [
+          {
+            "category": "pothole",
+            "confidence": 0.5025327205657959,
+            "bbox": [
+              300.46,
+              280.83,
+              409.08,
+              321.05
+            ]
+          }
+        ],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1110,
+        "timestamp": 37.037,
+        "before": [
+          {
+            "category": "pothole",
+            "confidence": 0.8391484022140503,
+            "bbox": [
+              344.77,
+              300.06,
+              480.01,
+              352.01
+            ]
+          }
+        ],
+        "threshold_only": [
+          {
+            "category": "pothole",
+            "confidence": 0.8391484022140503,
+            "bbox": [
+              344.77,
+              300.06,
+              480.01,
+              352.01
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 1140,
+        "timestamp": 38.038000000000004,
+        "before": [
+          {
+            "category": "pothole",
+            "confidence": 0.6063006520271301,
+            "bbox": [
+              529.1,
+              328.97,
+              639.53,
+              359.76
+            ]
+          }
+        ],
+        "threshold_only": [
+          {
+            "category": "pothole",
+            "confidence": 0.6063006520271301,
+            "bbox": [
+              529.1,
+              328.97,
+              639.53,
+              359.76
+            ]
+          }
+        ]
+      },
+      {
+        "frame_index": 1170,
+        "timestamp": 39.039,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1200,
+        "timestamp": 40.04,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1230,
+        "timestamp": 41.041000000000004,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1260,
+        "timestamp": 42.042,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1290,
+        "timestamp": 43.043,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1320,
+        "timestamp": 44.044000000000004,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1350,
+        "timestamp": 45.045,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1380,
+        "timestamp": 46.046,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1410,
+        "timestamp": 47.047000000000004,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1440,
+        "timestamp": 48.048,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1470,
+        "timestamp": 49.049,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1500,
+        "timestamp": 50.050000000000004,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1530,
+        "timestamp": 51.051,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1560,
+        "timestamp": 52.052,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1590,
+        "timestamp": 53.053000000000004,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1620,
+        "timestamp": 54.054,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1650,
+        "timestamp": 55.055,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1680,
+        "timestamp": 56.056000000000004,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1710,
+        "timestamp": 57.057,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1740,
+        "timestamp": 58.058,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1770,
+        "timestamp": 59.059000000000005,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1800,
+        "timestamp": 60.06,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1830,
+        "timestamp": 61.061,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1860,
+        "timestamp": 62.062,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1890,
+        "timestamp": 63.063,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1920,
+        "timestamp": 64.06400000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1950,
+        "timestamp": 65.065,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 1980,
+        "timestamp": 66.066,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2010,
+        "timestamp": 67.06700000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2040,
+        "timestamp": 68.068,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2070,
+        "timestamp": 69.069,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2100,
+        "timestamp": 70.07000000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2130,
+        "timestamp": 71.071,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2160,
+        "timestamp": 72.072,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2190,
+        "timestamp": 73.07300000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2220,
+        "timestamp": 74.074,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2250,
+        "timestamp": 75.075,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2280,
+        "timestamp": 76.07600000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2310,
+        "timestamp": 77.077,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2340,
+        "timestamp": 78.078,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2370,
+        "timestamp": 79.07900000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2400,
+        "timestamp": 80.08,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2430,
+        "timestamp": 81.081,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2460,
+        "timestamp": 82.08200000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2490,
+        "timestamp": 83.083,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2520,
+        "timestamp": 84.084,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2550,
+        "timestamp": 85.08500000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2580,
+        "timestamp": 86.086,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2610,
+        "timestamp": 87.087,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2640,
+        "timestamp": 88.08800000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2670,
+        "timestamp": 89.089,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2700,
+        "timestamp": 90.09,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2730,
+        "timestamp": 91.09100000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2760,
+        "timestamp": 92.092,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2790,
+        "timestamp": 93.093,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2820,
+        "timestamp": 94.09400000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2850,
+        "timestamp": 95.095,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2880,
+        "timestamp": 96.096,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2910,
+        "timestamp": 97.09700000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2940,
+        "timestamp": 98.098,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 2970,
+        "timestamp": 99.099,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3000,
+        "timestamp": 100.10000000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3030,
+        "timestamp": 101.101,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3060,
+        "timestamp": 102.102,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3090,
+        "timestamp": 103.10300000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3120,
+        "timestamp": 104.104,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3150,
+        "timestamp": 105.105,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3180,
+        "timestamp": 106.10600000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3210,
+        "timestamp": 107.107,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3240,
+        "timestamp": 108.108,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3270,
+        "timestamp": 109.10900000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3300,
+        "timestamp": 110.11,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3330,
+        "timestamp": 111.111,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3360,
+        "timestamp": 112.11200000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3390,
+        "timestamp": 113.113,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3420,
+        "timestamp": 114.114,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3450,
+        "timestamp": 115.11500000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3480,
+        "timestamp": 116.116,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3510,
+        "timestamp": 117.117,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3540,
+        "timestamp": 118.11800000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3570,
+        "timestamp": 119.119,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3600,
+        "timestamp": 120.12,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3630,
+        "timestamp": 121.121,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3660,
+        "timestamp": 122.122,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3690,
+        "timestamp": 123.123,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3720,
+        "timestamp": 124.124,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3750,
+        "timestamp": 125.125,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3780,
+        "timestamp": 126.126,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3810,
+        "timestamp": 127.127,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3840,
+        "timestamp": 128.12800000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3870,
+        "timestamp": 129.129,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3900,
+        "timestamp": 130.13,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3930,
+        "timestamp": 131.131,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3960,
+        "timestamp": 132.132,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 3990,
+        "timestamp": 133.133,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4020,
+        "timestamp": 134.13400000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4050,
+        "timestamp": 135.135,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4080,
+        "timestamp": 136.136,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4110,
+        "timestamp": 137.137,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4140,
+        "timestamp": 138.138,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4170,
+        "timestamp": 139.139,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4200,
+        "timestamp": 140.14000000000001,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4230,
+        "timestamp": 141.141,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4260,
+        "timestamp": 142.142,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4290,
+        "timestamp": 143.143,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4320,
+        "timestamp": 144.144,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4350,
+        "timestamp": 145.145,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4380,
+        "timestamp": 146.14600000000002,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4410,
+        "timestamp": 147.147,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4440,
+        "timestamp": 148.148,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4470,
+        "timestamp": 149.149,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4500,
+        "timestamp": 150.15,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4530,
+        "timestamp": 151.151,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4560,
+        "timestamp": 152.15200000000002,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4590,
+        "timestamp": 153.153,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4620,
+        "timestamp": 154.154,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4650,
+        "timestamp": 155.155,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4680,
+        "timestamp": 156.156,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4710,
+        "timestamp": 157.157,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4740,
+        "timestamp": 158.15800000000002,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4770,
+        "timestamp": 159.159,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4800,
+        "timestamp": 160.16,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4830,
+        "timestamp": 161.161,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4860,
+        "timestamp": 162.162,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4890,
+        "timestamp": 163.163,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4920,
+        "timestamp": 164.16400000000002,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4950,
+        "timestamp": 165.165,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 4980,
+        "timestamp": 166.166,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 5010,
+        "timestamp": 167.167,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 5040,
+        "timestamp": 168.168,
+        "before": [],
+        "threshold_only": []
+      },
+      {
+        "frame_index": 5070,
+        "timestamp": 169.169,
+        "before": [],
+        "threshold_only": []
+      }
+    ]
+  },
+  "limitations": [
+    "0.60 is a requested starting threshold, not a validated optimum.",
+    "Four published RDD2022 test images, six boxes; not representative local validation.",
+    "Slideshow repeats those four still images: repeated frame counts are NOT independent samples or driving-tracking validation.",
+    "Road regions are provisional assistant visual labels, not human-adjudicated; only potholes with box centers inside annotated ROIs are scored.",
+    "Unannotated areas and ambiguous asphalt patches are excluded. Recall on negative-only ROIs is undefined.",
+    "Video selected after observing the error. This is a regression diagnostic, not a held-out benchmark.",
+    "Temporal stability can retain a persistent false positive and suppress a fast-moving real defect."
+  ]
+}

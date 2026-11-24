@@ -1,0 +1,10 @@
+{% from 'ui.html' import icon %}
+{% macro review_form(action, note='') %}
+<form class="review-form" method="post" action="{{ action }}" autocomplete="off" data-dirty-warning>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label>Тексеру негізі<input name="note" value="{{ note }}" maxlength="2000" placeholder="Мысалы: қорапта ойық емес, люк қақпағы көрінеді…"></label>
+  <label>Қате анықтаудың себебі<select name="reason">{% for key,label in review_reasons.items() %}<option value="{{ key }}" {{ 'selected' if key == 'other' }}>{{ label }}</option>{% endfor %}</select></label>
+  <div class="review-actions"><button class="button primary small" type="submit" name="verdict" value="confirmed">{{ icon('check') }} Дұрыс анықталды</button><button class="button secondary small" type="submit" name="verdict" value="rejected">{{ icon('close') }} Қате анықталды</button><button class="button secondary small" type="submit" name="verdict" value="predicted">Тексерілмеген</button></div>
+  <p class="help">Растау мен қабылдамауға негіздеме қажет. «Тексерілмеген» бұрынғы шешімді қайтарады. Бастапқы кадр мен шешім бөлек жинаққа сақталады; бүкіл кадр толық таңбаланды деп есептелмейді.</p>
+</form>
+{% endmacro %}

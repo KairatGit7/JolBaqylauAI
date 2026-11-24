@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "isolated_database": true,
+  "inference": "unit-test fixture; real checkpoint tested separately with pytest",
+  "checks": [
+    "Kazakh image/video preset selectors",
+    "fixed confidence display and default restoration",
+    "image review buttons with JavaScript and SQLite history",
+    "video Balanced processes all 20 fixture frames at 960",
+    "reanalysis selector",
+    "390px image layout"
+  ],
+  "js_errors": []
+}

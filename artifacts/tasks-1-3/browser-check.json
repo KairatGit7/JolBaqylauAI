@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "normal_login_required": false,
+  "real_image_inference": true,
+  "image_download": true,
+  "real_video_inference": true,
+  "private_cross_session_access_blocked": true,
+  "admin_workflows_preserved": true,
+  "image_layout_widths": [
+    320,
+    390,
+    768
+  ],
+  "js_errors": [],
+  "image_result_url": "http://127.0.0.1:5000/images/32b2c2a57ce74e0fb69050a939ee5241",
+  "video_result_url": "http://127.0.0.1:5000/videos/67c3cc409dbe458c9d4d0ce65a5001a5"
+}

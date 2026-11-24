@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "video_sha256": "8469217276840d3641615c474fb38216ac4775cc5de35ce8e1f9f703c14e3c9c",
+  "annotation_provenance": "Provisional visual annotations by the coding assistant on original video frames, 2026-11-22. Not human-adjudicated ground truth. Only the listed regions and pothole class are labeled; the rest of each image is unscored.",
+  "sampling_seconds": 1.0,
+  "regions": [
+    {"frame_index": 1080, "kind": "manhole_cover", "bbox": [298, 278, 412, 325], "truth": [], "category": "pothole", "note": "Patterned, closed metal cover; no open pothole visible in this box."},
+    {"frame_index": 1110, "kind": "manhole_cover", "bbox": [342, 298, 484, 355], "truth": [], "category": "pothole", "note": "Same cover one sampled frame later."},
+    {"frame_index": 1140, "kind": "manhole_cover", "bbox": [527, 326, 640, 360], "truth": [], "category": "pothole", "note": "Same cover partly outside the frame."},
+    {"frame_index": 1080, "kind": "road_marking", "bbox": [340, 157, 620, 202], "truth": [], "category": "pothole", "note": "Zebra crossing paint; no pothole visible within the selected paint region."},
+    {"frame_index": 1110, "kind": "road_marking", "bbox": [350, 168, 620, 214], "truth": [], "category": "pothole", "note": "Zebra crossing paint."},
+    {"frame_index": 1140, "kind": "road_marking", "bbox": [410, 179, 630, 224], "truth": [], "category": "pothole", "note": "Zebra crossing paint."},
+    {"frame_index": 1800, "kind": "shadow", "bbox": [40, 169, 540, 197], "truth": [], "category": "pothole", "note": "Long shadows crossing the road; no pothole visible in the selected strip."}
+  ],
+  "unscored": [
+    {"frame_index": 3000, "kind": "asphalt_patch", "bbox": [270, 115, 470, 165], "note": "Patch-like tonal variation; resolution and lighting do not establish whether it is a repair or damage. No negative label assigned. Requires human adjudication."}
+  ]
+}

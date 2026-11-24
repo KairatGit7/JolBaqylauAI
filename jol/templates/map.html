@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% from 'ui.html' import icon, number %}
+{% block title %}Жол картасы · ЖолБақылау AI{% endblock %}
+{% block head %}<link rel="stylesheet" href="/static/vendor/leaflet/leaflet.css"><link rel="preconnect" href="https://a.tile.openstreetmap.org">{% endblock %}
+{% block content %}
+<div class="page-heading"><div><div class="eyebrow">ГЕОГРАФИЯЛЫҚ МОНИТОРИНГ</div><h1>Жол картасы</h1><p>Дереккөзі бар координаттар. Әр нүктенің артында — тексерілетін дәлел.</p></div><a class="button secondary" href="#new-segment">{{ icon('plus') }} Учаске қосу</a></div>
+<div class="demo-banner">{{ icon('pin') }}<p><strong>{{ number(unlocated) }} координатсыз оқиға</strong> тізімде сақталған. Талдықорған — бастапқы көрініс; қала толық зерттелген жоқ.</p></div>
+<section class="card map-panel">
+  <form class="map-toolbar filters" method="get" id="map-filters" autocomplete="off">
+    <label for="category-filter">Ақау санаты<select id="category-filter" name="category"><option value="">Барлық санат</option>{% for key,label in labels.items() %}<option value="{{ key }}" {{ 'selected' if request.args.get('category') == key }}>{{ label }}</option>{% endfor %}</select></label>
+    <label for="status-filter">Тексеру күйі<select id="status-filter" name="status"><option value="">Барлық күй</option>{% for key in ['predicted','confirmed','rejected'] %}<option value="{{ key }}" {{ 'selected' if request.args.get('status') == key }}>{{ statuses[key] }}</option>{% endfor %}</select></label>
+    <button class="button secondary" type="button" id="reset-filters">{{ icon('filter') }} Сүзгіні тазалау</button>
+  </form>
+  <div id="map" role="region" aria-label="Жол ақауларының интерактивті картасы" aria-describedby="map-location-note"></div>
+  <div class="map-status-bar"><p class="help" id="map-status" role="status">Жазбалар жүктелуде…</p><p class="help" id="tile-status" role="status">OpenStreetMap · карта қабатына интернет қажет</p></div>
+</section>
+<p id="map-location-note" class="help">GPS камераның орнын көрсетеді, ақаудың геодезиялық дәл нүктесін емес. Координатсыз оқиғаларға картада белгі қойылмайды.</p>
+<section class="card section-gap"><div class="section-heading"><h2>Бақылау жазбалары</h2><span class="chip">{{ icon('file') }} Дәлелдер журналы</span></div><div class="table-wrap"><table><caption class="sr-only">Карта сүзгісіне сәйкес бақылаулар, оның ішінде координатсыз жазбалар</caption><thead><tr><th scope="col">Оқиға</th><th scope="col">Учаске / орналасу</th><th scope="col">Түсірілім уақыты</th><th scope="col">Күйі</th><th scope="col">Дәлел</th></tr></thead><tbody id="map-records"></tbody></table></div></section>
+<div class="two-col section-gap">
+  <section class="card" id="new-segment"><div class="section-heading"><h2>Жол учаскесін қосу</h2>{{ icon('map') }}</div><form method="post" action="/segments" autocomplete="off" data-dirty-warning><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label for="segment-name">Учаске атауы<input id="segment-name" name="name" required maxlength="200" placeholder="Мысалы: көше, екі қиылыс аралығы…"></label><label for="segment-description">Шекарасының сипаттамасы<textarea id="segment-description" name="description" maxlength="2000" placeholder="Учаскенің басталу және аяқталу нүктелері…"></textarea></label><p class="help">Учаскені қосу оқиғаларға координат бермейді.</p><button class="button primary" type="submit">{{ icon('plus') }} Учаскені сақтау</button></form></section>
+  <section class="card"><h2>Тіркелген учаскелер <span class="count">{{ number(segments|length) }}</span></h2>{% for segment in segments %}<div class="segment-item"><h3>{{ icon('pin') }} {{ segment.name }}</h3><p>{{ segment.description or 'Қосымша сипаттама жоқ.' }}</p></div>{% else %}<div class="empty"><span class="empty-icon">{{ icon('map') }}</span><h3>Алғашқы учаскені тіркеңіз</h3><p>Бақылауларды және жөндеу шарттарын бір учаскеге байланыстыра аласыз.</p></div>{% endfor %}</section>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/vendor/leaflet/leaflet.js" defer></script><script src="/static/map.js" defer></script>{% endblock %}

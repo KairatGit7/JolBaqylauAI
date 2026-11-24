@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% from 'ui.html' import icon %}
+{% block title %}Әкімшілік бөлім · ЖолБақылау AI{% endblock %}
+{% block content %}
+<div class="login-wrap">
+  <div class="login-intro">{{ icon('road') }}<h2>Сапалы жол.<br>Ашық болашақ.</h2><p>Жолдағы деректен тексерілетін дәлелге дейінгі біртұтас жұмыс кеңістігі.</p><small>{{ icon('lock') }} Жеке деректер. Жауапты бақылау.</small></div>
+  <section class="card login-card"><div class="eyebrow">ҚОРҒАЛҒАН ӘКІМШІЛІК БӨЛІМ</div><h1>Әкімшіге кіру</h1><p>Кәдімгі сурет пен бейне талдауына құпиясөз қажет емес. Бұл кіру тек бұрынғы жеке материалдар мен әкімшілік әрекеттерге арналған.</p><a class="text-link" href="/analysis">Құпиясөзсіз талдауға өту {{ icon('arrow') }}</a><form method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label for="password">Әкімші құпиясөзі<input id="password" type="password" name="password" required autocomplete="current-password" aria-describedby="login-help"></label><button class="button primary" type="submit">Жүйеге кіру {{ icon('arrow') }}</button></form><p class="help" id="login-help">Әкімші деректері жергілікті жоба баптауларында сақталады. Құпиясөзді жарияламаңыз.</p></section>
+</div>
+{% endblock %}

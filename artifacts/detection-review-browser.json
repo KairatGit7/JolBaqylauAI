@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "isolated_database": true,
+  "production_labels_written": 0,
+  "js_errors": [],
+  "checks": [
+    "named submit buttons with JavaScript enabled",
+    "immutable review archive",
+    "rejected reason and raw PNG export",
+    "suppressed candidate rescue",
+    "retraction removes exported label",
+    "private access",
+    "320/390/768px review layout"
+  ]
+}
